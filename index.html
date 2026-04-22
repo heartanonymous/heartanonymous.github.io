@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="HEART: Heterogeneous multi-LLM framework for robotic task planning under resource constraints.">
+  <meta property="og:title" content="HEART: Heterogeneous Multi-LLM Framework for Robotic Task Planning"/>
+  <meta property="og:description" content="A heterogeneous multi-LLM framework that decomposes instructions into atomic reasoning tasks and allocates them to role-specialized expert agents for physically executable robotic task planning."/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image" content="static/images/overview.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="HEART: Heterogeneous Multi-LLM Framework for Robotic Task Planning">
+  <meta name="twitter:description" content="Role-specialized expert LLM agents for physically executable robotic task planning under resource constraints.">
+  <meta name="twitter:image" content="static/images/overview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="LLM, robotic task planning, multi-agent, heterogeneous agents, role-specialized reasoning, constraint-driven planning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>HEART: Heterogeneous Multi-LLM Framework for Robotic Task Planning</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">HEART: Heterogeneous Expert Agents for Robotic Task Planning under Resource Constraints</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Anonymous Authors
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Under Review</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Paper PDF -->
+                <span class="link-block">
+                  <a href="static/pdfs/HEART.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Code (anonymized) -->
+                <span class="link-block">
+                  <a href="https://anonymous.4open.science/r/HEART-anonymous-178D/README.md" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="static/videos/HEART.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          <strong>HEART</strong> decomposes natural-language instructions into atomic reasoning tasks and dispatches them to role-specialized expert agents, producing physically executable plans under token-budget constraints.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Large Language Models (LLMs) can reason over complex instructions but often fail to satisfy the physical and spatial constraints required for robotic task planning. Recent LLM-based planners directly translate text into action sequences, yet they lack structured reasoning about feasibility, reachability, and logical order, resulting in invalid or incomplete plans.
+            </p>
+            <p>
+              We present a heterogeneous multi-LLM framework that decomposes instructions into atomic reasoning tasks and allocates them to role-specialized expert agents under a token budget for real-world communication and computation constraints. By combining role-oriented reasoning from heterogeneous agents followed by constraint-driven plan synthesis, <strong>HEART</strong> validates capability, reachability, and constraint conditions before planning and produces physically executable plans while maintaining efficiency.
+            </p>
+            <p>
+              Experiments across three household benchmarks show that HEART consistently improves plan success and token efficiency compared to single-LLM and rule-based planners, demonstrating that heterogeneous LLM collaboration enables robust and scalable robotic task planning under resource constraints.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <!-- Overview / Method figure -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Method Overview</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <figure class="image">
+              <img src="static/images/overview.png" alt="HEART framework overview: heterogeneous role-specialized LLM agents collaborate under a token budget to produce physically executable robotic plans.">
+            </figure>
+            <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+              Overview of HEART. Instructions are decomposed into atomic reasoning tasks and allocated to role-specialized expert agents. Role-oriented reasoning is followed by constraint-driven plan synthesis, which validates capability, reachability, and constraint conditions before emitting an executable plan.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End overview figure -->
+
+
+  <!-- BibTeX citation (hidden for anonymous submission) -->
+  <!--
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{heart2026,
+  title   = {HEART: Heterogeneous Expert Agents for Robotic Task Planning under Resource Constraints},
+  author  = {Anonymous},
+  year    = {2026}
+}</code></pre>
+    </div>
+  </section>
+  -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
